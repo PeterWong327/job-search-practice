@@ -12,7 +12,6 @@
 var twoSum = function(nums, target) {
     for (let i = 0; i < nums.length - 1; i += 1) {
       let curr = nums[i];
-
       for (let j = i + 1; j < nums.length; j += 1) {
         let next = nums[j];
         if ((curr + next) === target) {
