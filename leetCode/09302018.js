@@ -31,5 +31,5 @@ var reverse = function(x) {
       }
     }
 
-    return parseInt(newString);
+    return Math.sign(x) * parseInt(newString);
 };
