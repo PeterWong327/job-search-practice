@@ -1,0 +1,38 @@
+.box {
+  border-color: 1px dotted blue;
+  height: 50px;
+  width: 50px;
+  background-color: blue;
+}
+
+.circle {
+  height: 100px;
+  width: 100px;
+  border-color: 2px solid red;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+
+
+
+
+span {
+  font-size: 30px;
+  margin: 10px;
+  background-image: linear-gradient(to right, red 50%, blue 50%);
+  background-size: 200%;
+  /* background-position: 100%; */
+  transition: all 0.5s;
+}
+
+span:hover {
+  background-position: -100%;
+}
+
+div {
+  font-size: 50px;
+  margin: 10px;
+}
