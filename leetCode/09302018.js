@@ -32,10 +32,10 @@ var reverse = function(x) {
   reversed = parseInt(reversed);
   reversed = Math.sign(x) * reversed;
 
-  if(reversed > -(2**31) && reversed < 2**31-1) {
+  if ((reversed > -(2**31)) && (reversed < 2**31-1)) {
     return reversed;
   } else {
-      return 0
+      return 0;
     }
-  }
+  };
 };
