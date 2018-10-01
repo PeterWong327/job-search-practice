@@ -22,14 +22,20 @@
 // when the reversed integer overflows.
 
 var reverse = function(x) {
-    let string = x.toString();
-    let newString = "";
+  let string = x.toString();
+  let reversed = "";
 
-    for (let i = string.length - 1; i >= 0; i -= 1) {
-      if (string[i] !== "0") {
-        newString += string[i];
-      }
+  for(let i = string.length - 1;i >= 0;i--){
+    reversed += string[i];
+  }
+
+  reversed = parseInt(reversed);
+  reversed = Math.sign(x) * reversed;
+
+  if(reversed > -(2**31) && reversed < 2**31-1) {
+    return reversed;
+  } else {
+      return 0
     }
-
-    return Math.sign(x) * parseInt(newString);
+  }
 };
