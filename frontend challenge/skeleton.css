@@ -1,18 +1,20 @@
 .box {
   border-color: 1px dotted blue;
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 100px;
   background-color: blue;
+  left: 50%;
+  top: 50%;
 }
 
 .circle {
   height: 100px;
   width: 100px;
-  border-color: 2px solid red;
+  border-color: 1px solid red;
   border-radius: 50%;
-  position: absolute;
   left: 50%;
   top: 50%;
+  background-color: red;
 }
 
 
