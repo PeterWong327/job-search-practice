@@ -22,11 +22,18 @@
 //
 // Input: 1
 // Output: "1"
+
 // Example 2:
 //
 // Input: 4
 // Output: "1211"
 
 var countAndSay = function(n) {
+  if (n === 1) {
+    return '1';
+  }
+  if (n === 2) {
+    return '11';
+  }
 
 };
