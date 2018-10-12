@@ -1,29 +1,32 @@
-// Given a sorted array and a target value, return the index if the
-// target is found. If not, return the index where it would be if it
-// were inserted in order.
+// The count-and-say sequence is the sequence of integers with the first
+// five terms as following:
 //
-// You may assume no duplicates in the array.
+// 1.     1
+// 2.     11
+// 3.     21
+// 4.     1211
+// 5.     111221
+// 1 is read off as "one 1" or 11.
+// 11 is read off as "two 1s" or 21.
+// 21 is read off as "one 2, then one 1" or 1211.
+//
+// Given an integer n where 1 ≤ n ≤ 30, generate the nth term of the
+// count-and-say sequence.
+//
+// Note: Each term of the sequence of integers will be represented as a
+// string.
+//
+//
 //
 // Example 1:
 //
-// Input: [1,3,5,6], 5
-// Output: 2
-//
+// Input: 1
+// Output: "1"
 // Example 2:
 //
-// Input: [1,3,5,6], 2
-// Output: 1
-//
-// Example 3:
-//
-// Input: [1,3,5,6], 7
-// Output: 4
-//
-// Example 4:
-//
-// Input: [1,3,5,6], 0
-// Output: 0
+// Input: 4
+// Output: "1211"
 
-var searchInsert = function(nums, target) {
-    
+var countAndSay = function(n) {
+
 };
