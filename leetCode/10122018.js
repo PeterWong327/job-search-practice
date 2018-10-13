@@ -29,11 +29,22 @@
 // Output: "1211"
 
 var countAndSay = function(n) {
-  if (n === 1) {
-    return '1';
-  }
-  if (n === 2) {
-    return '11';
+  let str = '1';
+
+  for(let i = 2; i <= n; i += 1) {
+      let count = 0;
+      let newStr = '';
+      
+      for(let j = 0; j < str.length; j += 1) {
+          if ((j < str.length - 1) && (str[j] === str[j+1])) {
+              count += 1;
+          } else {
+              newStr += `${count + 1}${str[j]}`;
+              count = 0;
+          }
+      }
+      str = newStr;
   }
 
+  return str;
 };
