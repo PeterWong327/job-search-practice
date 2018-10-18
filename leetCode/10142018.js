@@ -23,6 +23,7 @@
 
 // "dvdf" => 3 ("vdf")
 // "bwf" => 3
+// "pwwkew" => 3
 
 var lengthOfLongestSubstring = function(s) {
   if (s.length <= 1) {
@@ -32,20 +33,21 @@ var lengthOfLongestSubstring = function(s) {
   let longest = "";
   let currStr = "";
 
-  for (let i = 0; i < s.length - 1; i += 1) {
+  for (let i = 0; i < s.length; i += 1) {
     currStr = "" + s[i];
 
     for (let j = i + 1; j < s.length; j += 1) {
-      console.log("currStr is:" + currStr + " when i is:" + i + " and j is:" + j);
       let currentChar = s[j];
       if (!currStr.includes(currentChar)) {
         currStr += currentChar;
-      } else if (currStr.includes(currentChar)) {
         if (currStr.length > longest.length) {
           longest = currStr;
-          j = s.length;
-          // currStr = "" + currentChar;
         }
+      } else if (currStr.includes(currentChar)) {
+          if (currStr.length > longest.length) {
+            longest = currStr;
+          }
+        j = s.length;
       }
     }
   }
@@ -53,5 +55,5 @@ var lengthOfLongestSubstring = function(s) {
     longest = currStr;
   }
 
-  return longest;
+  return longest.length;
 };
