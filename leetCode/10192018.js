@@ -12,10 +12,29 @@
 // Output: "bb"
 
 var longestPalindrome = function(s) {
-  // loop thru each character of string
-  // find palindrome (in nested loop, check last char with curr char for
-  // equality, repeat by decrementing last char index until last char
-  // index is equal to curr char index)
-  // save palindrome as longest if longer than longest
-  // return longest
+
+  let pals = [];
+  for (let i = 0; i < s.length; i += 1) {
+    for (let j = i + 1; j < s.length + 1; j += 1) {
+      let substring = s.slice(i, j);
+      if (isPal(substring)) {
+        pals.push(substring);
+      }
+    }
+  }
+
+  return pals.sort()[pals.length - 1];
 };
+
+
+function isPal(string) {
+  for (let i = 0; i < string.length; i += 1) {
+    let curr = string[i];
+    let last = string[string.length -1 - i];
+    if (curr !== last) {
+      return false;
+    }
+  }
+
+  return true;
+}
