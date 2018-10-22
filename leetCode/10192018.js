@@ -12,18 +12,23 @@
 // Output: "bb"
 
 var longestPalindrome = function(s) {
+  if (s.length <= 1) {
+    return s;
+  }
 
-  let pals = [];
-  for (let i = 0; i < s.length; i += 1) {
-    for (let j = i + 1; j < s.length + 1; j += 1) {
+  let longestPal = "";
+
+  for (let i = 0; i < s.length - 1; i += 1) {
+    for (let j = i + 1; j <= s.length; j += 1) {
       let substring = s.slice(i, j);
-      if (isPal(substring)) {
-        pals.push(substring);
+
+      if (isPal(substring) && substring.length > longestPal.length) {
+        longestPal = substring;
       }
     }
   }
 
-  return pals.sort()[pals.length - 1];
+  return longestPal;
 };
 
 
@@ -31,6 +36,7 @@ function isPal(string) {
   for (let i = 0; i < string.length; i += 1) {
     let curr = string[i];
     let last = string[string.length -1 - i];
+    
     if (curr !== last) {
       return false;
     }
