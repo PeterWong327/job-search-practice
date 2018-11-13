@@ -13,26 +13,30 @@
 // Input: haystack = "aaaaa", needle = "bba"
 // Output: -1
 
+// Example 3:
+// Input: haystack = "mississippi", needle = "issip"
+ // Output: 4
+
 
 var strStr = function(haystack, needle) {
   if (needle.length === 0) {
     return 0;
   }
+  if (needle.length > haystack.length) {
+    return -1;
+  }
 
-    for (let i = 0; i < haystack.length; i += 1) {
-      let currentChar = haystack[i];
+  for (let i = 0; i < haystack.length; i += 1) {
+    let currentChar = haystack[i];
 
-      if (currentChar === needle[0]) {
-        let newHaystack = haystack.slice(i);
+    if (currentChar === needle[0]) {
+      let needleLength = needle.length;
 
-        for (let j = 0; j < needle.length; j += 1) {
-          if (newHaystack[j] !== needle[j]) {
-            return -1;
-          }
-        }
-
+      if (haystack.slice(i, i+needleLength) === needle) {
         return i;
       }
+
     }
-    return -1;
+  }
+  return -1;
 };
