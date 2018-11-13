@@ -15,7 +15,7 @@
 // Output: 1
 
 // Example 3:
-//
+
 // Input: [1,3,5,6], 7
 // Output: 4
 
@@ -25,9 +25,23 @@
 // Output: 0
 
 var searchInsert = function(nums, target) {
-    for (let i = 0; i < nums.length; i += 1) {
-      if (nums[i] === target) {
-        return i;
-      }
+  if (nums.includes(target)) {
+    return nums.indexOf(target);
+  }
+  let higherNum = nums[nums.length - 1] > target ? nums[nums.length - 1] : target;
+  let allNums = new Array(higherNum + 1);
+  allNums[target] = target;
+  let result = [];
+
+  for (let i = 0; i < nums.length; i++) {
+    allNums[nums[i]] = nums[i];
+  }
+
+  for (let i = 0; i < allNums.length; i++) {
+    if (typeof allNums[i] === "number") {
+      result.push(allNums[i]);
     }
+  }
+
+  return result.indexOf(target);
 };
