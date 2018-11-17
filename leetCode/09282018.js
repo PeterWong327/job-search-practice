@@ -44,32 +44,23 @@ var twoSum = function(nums, target) {
  */
 
 var addTwoNumbers = function(l1, l2) {
-    let newl1 = "";
-    let newl2 = "";
-    let current1 = l1;
-    let current2 = l2;
-
-    while (current1 !== null) {
-      newl1 += current1;
-      current1 = current1.next;
-    }
-
-    while (current2 !== null) {
-      newl2 += current2;
-      current2 = current2.next;
-    }
-
-    let result = parseInt(newl1) + parseInt(newl2);
-    let newResult = result.toString();
-    newResult = newResult.split("").reverse().join("");
-
-    // newResult = 708
-    // need to initialize a new node
-    let head = newResult[0];
-
-    for (let i = 1; i < newResult.length; i += 1) {
-      head.next = newResult[i];
-    }
-
-    return head;
+  let dummyHead = new ListNode(0);
+  let p = l1;
+  let q = l2;
+  let curr = dummyHead;
+  let carry = 0;
+  while (p != null || q != null) {
+    let x = (p !== null) ? p.val : 0;
+    let y = (q !== null) ? q.val : 0;
+    let sum = carry + x + y;
+    carry = Math.floor(sum / 10);
+    curr.next = new ListNode(sum % 10);
+    curr = curr.next;
+    if (p !== null) p = p.next;
+    if (q !== null) q = q.next;
+  }
+  if (carry > 0) {
+    curr.next = new ListNode(carry);
+  }
+  return dummyHead.next;
 };
