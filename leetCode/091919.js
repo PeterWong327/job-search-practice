@@ -12,19 +12,22 @@
  * @return {string}
  */
 var reverseWords = function(s) {
-    let words = s.split(" ");
-    let reversedSentence = [];
+  let words = s.split(" ");
+  let reversedSentence = "";
 
-    for (let i = 0; i < words.length; i++) {
-      let word = words[i];
-      let reversedWord = [];
+for (let i = 0; i < words.length; i++) {
+  let word = words[i];
+  let reversedWord = "";
 
-      for (let j = word.length -1; j >= 0; j--) {
-        let char = word[j];
-        reversedWord.push(char);
-      }
-      reversedSentence.push(reversedWord.join(""));
-    }
+  for (let j = word.length -1; j >= 0; j--) {
+    let char = word[j];
+    reversedWord += char;
+}
+  reversedSentence += reversedWord;
+  if (i !== words.length -1) {
+      reversedSentence += " ";
+  }
+}
 
-    return reversedSentence.join(" ");
+  return reversedSentence;
 };
