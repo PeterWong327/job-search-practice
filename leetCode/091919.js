@@ -23,7 +23,7 @@ var reverseWords = function(s) {
         let char = word[j];
         reversedWord.push(char);
       }
-      reversedSentence.push(reversedWord);
+      reversedSentence.push(reversedWord.join);
     }
 
     return reversedSentence.join(" ");
