@@ -22,7 +22,7 @@ for (let i = 0; i < words.length; i++) {
   for (let j = word.length -1; j >= 0; j--) {
     let char = word[j];
     reversedWord += char;
-}
+  }
   reversedSentence += reversedWord;
   if (i !== words.length -1) {
       reversedSentence += " ";
